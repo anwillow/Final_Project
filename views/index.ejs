@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norway views</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Отображение времени -->
+    <div id="time-control">
+        <div id="time-display" class="time-display"></div>
+    </div>
+
+    <!-- HUD -->
+    <div class="hud">
+        <button id="darkModeBtn">Dark Mode</button>
+        <button onclick="location.href='/norway'">More about Norway</button>
+        <button id="contactBtn">Contacts</button>
+        <button id="crazyMenuBtn">Crazy Menu</button>
+    </div>
+
+    <!-- Модальное окно для контактов -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeContactModal">&times;</span>
+            <h2>Contacts</h2>
+            <p>Email: norwayviews@example.com</p>
+            <p>Phone: +47 123 45 678</p>
+    
+            <!-- Форма для комментариев -->
+            <h3>Leave a Comment</h3>
+            <form id="commentForm" method="POST" action="/add-comment">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="comment" placeholder="Your Comment" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+    
+            <!-- Список комментариев -->
+            <div id="comments-section">
+                <h3>Comments</h3>
+                <ul id="comments-list">
+                    <% if (comments && comments.length > 0) { %>
+                        <% comments.forEach(comment => { %>
+                            <li>
+                                <strong><%= comment.name %>:</strong>
+                                <p><%= comment.comment %></p>
+                                <small><%= new Date(comment.created_at).toLocaleString() %></small>
+                            </li>
+                        <% }) %>
+                    <% } else { %>
+                        <p>No comments yet. Be the first to comment!</p>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Beautiful views of Norway</h1>
+        <iframe 
+            id="player"
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Norway</title>
+    <link rel="stylesheet" href="/norway.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Beautiful Places in Norway</h1>
+        <div class="places-list">
+            <div class="place" data-place-id="geirangerfjord">
+                <h2>1. Geirangerfjord</h2>
+            </div>
+            <div class="place" data-place-id="lofoten">
+                <h2>2. Lofoten Islands</h2>
+            </div>
+            <div class="place" data-place-id="trolltunga">
+                <h2>3. Trolltunga</h2>
+            </div>
+            <div class="place" data-place-id="preikestolen">
+                <h2>4. Preikestolen</h2>
+            </div>
+            <div class="place" data-place-id="kjeragbolten">
+                <h2>5. Kjeragbolten</h2>
+            </div>
+            <div class="place" data-place-id="senja">
+                <h2>6. Senja Island</h2>
+            </div>
+        </div>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-slideshow"></div>
+                <p id="modal-description"></p>
+            </div>
+        </div>      
+        <div class="back-button">
+            <button onclick="location.href='/'">Back to Home</button>
+        </div>          
+
+    <script src="/norway.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
