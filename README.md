@@ -34,7 +34,9 @@ youtube-video-site/
 Open PostgreSQL terminal (`psql`) and create the database:
    ```sql
    CREATE DATABASE project;
+
    \c project
+
    CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -59,13 +61,16 @@ Open PostgreSQL terminal (`psql`) and create the database:
 
 ## Database Configuration
 
-In the project file where the database connection is defined (e.g., `app.js` or a separate database configuration file), update the `user` property in the `Pool` configuration to match your PostgreSQL username:  
-   `const { Pool } = require('pg');`  
-   `const pool = new Pool({` 
-   `user: '<your-postgresql-username>',` 
-   `host: 'localhost',` 
-   `database: 'project',` 
-   `port: 5432 });`  
+In the project file where the database connection is defined (e.g., `app.js` or a separate database configuration file), update the `user` property in the `Pool` configuration to match your PostgreSQL username:
+   ```javascript
+   const { Pool } = require('pg');  
+      const pool = new Pool({
+      user: '<your-postgresql-username>',
+      host: 'localhost',
+      database: 'project',
+      port: 5432,
+   }); 
+   ```
 Replace `<your-postgresql-username>` with your actual PostgreSQL username (e.g., `kost9nyt`).
 
 
