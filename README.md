@@ -10,13 +10,13 @@ This project is a Node.js-based web application for hosting or interacting with 
 - Pre-configured `package.json` for dependencies management.
 
 ## Project Structure
-- youtube-video-site/
-- ├── node_modules/        # Dependencies managed by npm
-- ├── public/              # Static files (CSS, JS, images)
-- ├── views/               # EJS templates for dynamic content
-- ├── app.js               # Main server file
-- ├── package.json         # Project metadata and dependencies
-- ├── package-lock.json    # Dependency tree lockfile
+youtube-video-site/
+├── node_modules/        # Dependencies managed by npm
+├── public/              # Static files (CSS, JS, images)
+├── views/               # EJS templates for dynamic content
+├── app.js               # Main server file
+├── package.json         # Project metadata and dependencies
+├── package-lock.json    # Dependency tree lockfile
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/anwillow/Final_Project.git && cd youtube-video-site`  
