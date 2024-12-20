@@ -61,11 +61,11 @@ Open PostgreSQL terminal (`psql`) and create the database:
 
 In the project file where the database connection is defined (e.g., `app.js` or a separate database configuration file), update the `user` property in the `Pool` configuration to match your PostgreSQL username:  
    `const { Pool } = require('pg');`  
-   `const pool = new Pool({ 
-    user: '<your-postgresql-username>', 
-    host: 'localhost', 
-    database: 'project', 
-    port: 5432 });`  
+   `const pool = new Pool({` 
+   `user: '<your-postgresql-username>',` 
+   `host: 'localhost',` 
+   `database: 'project',` 
+   `port: 5432 });`  
 Replace `<your-postgresql-username>` with your actual PostgreSQL username (e.g., `kost9nyt`).
 
 
