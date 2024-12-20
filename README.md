@@ -21,9 +21,22 @@ youtube-video-site/
 ## Installation
 1. Clone the repository: `git clone https://github.com/anwillow/Final_Project.git && cd youtube-video-site`  
 2. Install dependencies: `npm install`
-3. Setup database
-4. Start the server: `node app.js`
-5. Open your browser and navigate to: `http://localhost:3000`
+3. Download PostgreSQL:
+   - **For macOS:**
+     - Install PostgreSQL using Homebrew:  
+       `brew install postgresql`  
+     - Start the PostgreSQL service:  
+       `brew services start postgresql`
+     - Verify installation by accessing the PostgreSQL terminal:  
+       `psql postgres`
+   - **For Windows:**
+     - Download the installer from the official PostgreSQL website:  
+       [PostgreSQL Downloads](https://www.postgresql.org/download/)
+     - Run the installer and follow the prompts to complete the installation.
+     - Open the SQL Shell (psql) from the start menu and connect to your database.
+4. Setup database
+5. Start the server: `node app.js`
+6. Open your browser and navigate to: `http://localhost:3000`
 
 ## Requirements
 - Node.js (v14 or higher)
@@ -61,7 +74,7 @@ Open PostgreSQL terminal (`psql`) and create the database:
 
 ## Database Configuration
 
-In the project file where the database connection is defined (e.g., `app.js` or a separate database configuration file), update the `user` property in the `Pool` configuration to match your PostgreSQL username:
+In the project file where the database connection is defined `app.js`, update the `user` property in the `Pool` configuration to match your PostgreSQL username:
    ```javascript
    const { Pool } = require('pg');  
       const pool = new Pool({
