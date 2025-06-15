@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Your Ticket</title>
+  <link rel="stylesheet" href="/buytickets.css">
+</head>
+<body>
+  <h1>Buy Your Ticket</h1>
+
+  <div class="container">
+    <div>
+      <form id="buyForm">
+        <label>Your Name: <input type="text" name="name" required></label><br>
+
+        <label>Tour Type:
+          <select name="ticket">
+            <option value="Lofoten Islands Tour">Lofoten Islands Tour</option>
+            <option value="Northern Lights Experience">Northern Lights Experience</option>
+            <option value="Fjord Cruise Adventure">Fjord Cruise Adventure</option>
+            <option value="Trolltunga Hike">Trolltunga Hike</option>
+            <option value="Geirangerfjord Safari">Geirangerfjord Safari</option>
+          </select>
+        </label><br>
+
+        <label>Quantity: <input type="number" name="quantity" min="1" max="10" value="1" required></label><br>
+
+        <button type="submit">Buy</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+
+    <div class="tickets-section">
+      <h2>Purchased Tickets</h2>
+      <ul id="tickets-list">
+        <% if (allTickets.length > 0) { %>
+          <% allTickets.forEach(ticket => { %>
+            <li><strong><%= ticket.user %></strong> - <%= ticket.name %> (ID: <%= ticket.id %>)</li>
+          <% }) %>
+        <% } else { %>
+          <p>No tickets purchased yet.</p>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+
+  <a href="/"><button>Back to Home</button></a>
+  <script src="/buytickets.js"></script>
+</body>
+</html>

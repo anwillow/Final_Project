@@ -43,6 +43,27 @@ app.get('/norway', (req, res) => {
     res.render('norway');
 });
 
+const PurchaseManager = require('./PurchaseManager');
+const purchaseManager = new PurchaseManager();
+
+app.get('/buytickets', (req, res) => {
+  const allTickets = purchaseManager.users.flatMap(user =>
+    user.tickets.map(ticket => ({
+      user: user.name,
+      name: ticket.name,
+      id: ticket.id
+    }))
+  );
+
+  res.render('buytickets', { allTickets });
+});
+
+app.post('/buytickets', (req, res) => {
+  const { name, ticket, quantity } = req.body;
+  const result = purchaseManager.buyTicket(name, ticket, Number(quantity));
+  res.json(result);
+});
+
 // Route для добавления комментариев
 app.post('/add-comment', async (req, res) => {
     const { name, email, comment } = req.body;
