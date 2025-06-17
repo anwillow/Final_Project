@@ -7,7 +7,9 @@
 </head>
 <body>
   <h1>Buy Your Ticket</h1>
-
+  <div class="search-container">
+    <input type="text" id="ticketSearch" placeholder="Search by name or ticket ID">
+  </div>
   <div class="container">
     <div>
       <form id="buyForm">
@@ -36,7 +38,11 @@
       <ul id="tickets-list">
         <% if (allTickets.length > 0) { %>
           <% allTickets.forEach(ticket => { %>
-            <li><strong><%= ticket.user %></strong> - <%= ticket.name %> (ID: <%= ticket.id %>)</li>
+            <li class="ticket-card">
+              <span class="buyer-name"><strong><%= ticket.user %></strong></span> -
+              <span class="ticket-name"><%= ticket.name %></span>
+              (<span class="ticket-id"><%= ticket.id %></span>)
+            </li>
           <% }) %>
         <% } else { %>
           <p>No tickets purchased yet.</p>

@@ -23,3 +23,23 @@ document.getElementById('buyForm').addEventListener('submit', async (e) => {
 
   setTimeout(() => location.reload(), 1000);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("ticketSearch");
+  const ticketCards = document.querySelectorAll(".ticket-card");
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+
+    ticketCards.forEach(card => {
+      const name = card.querySelector(".buyer-name")?.innerText.toLowerCase() || "";
+      const id = card.querySelector(".ticket-id")?.innerText.toLowerCase() || "";
+
+      if (name.includes(query) || id.includes(query)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});

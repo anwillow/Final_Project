@@ -80,3 +80,17 @@ ul#tickets-list {
 ul#tickets-list li {
   margin-bottom: 5px;
 }
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-container input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  font-size: 14px;
+}
